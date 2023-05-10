@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://0qa7klxxr5eq"]
+[gd_scene load_steps=11 format=3 uid="uid://0qa7klxxr5eq"]
 
 [ext_resource type="Script" path="res://Juego/Players/Player01/player_01.gd" id="1_ih1yb"]
-[ext_resource type="Texture2D" uid="uid://bdm3hweraubmw" path="res://Juego/Players/Player01/Img/Personaje1paco.png" id="2_hr368"]
+[ext_resource type="Texture2D" uid="uid://y64pju8vn77c" path="res://Recursos/TileMap/personaje2paco.png" id="2_0shrd"]
+[ext_resource type="Texture2D" uid="uid://ci0ks4gkwdi4t" path="res://Recursos/TileMap/coin2.png" id="3_yheyr"]
+[ext_resource type="Script" path="res://UT.gd" id="4_6xw2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qu5h"]
-size = Vector2(11, 12)
+size = Vector2(10, 12)
 
 [sub_resource type="Animation" id="Animation_cc3ra"]
 length = 0.001
@@ -31,10 +33,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2, 4, 5, 4, 4]
+"values": [2]
 }
 
 [sub_resource type="Animation" id="Animation_se1eo"]
@@ -64,10 +66,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 3, 1, 2, 7, 10]
+"values": [0, 1, 3, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0i7wx"]
@@ -79,18 +81,56 @@ _data = {
 }
 
 [node name="player01" type="CharacterBody2D"]
+top_level = true
 script = ExtResource("1_ih1yb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_5qu5h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.98023e-08, 0)
 scale = Vector2(0.240863, 0.3)
-texture = ExtResource("2_hr368")
+texture = ExtResource("2_0shrd")
 hframes = 3
 vframes = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+rotation_smoothing_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-132, -64)
+scale = Vector2(0.53125, 0.53125)
+texture = ExtResource("3_yheyr")
+hframes = 4
+
+[node name="timer" type="Label" parent="Camera2D" groups=["tiempo"]]
+offset_left = 98.0
+offset_top = -75.0
+offset_right = 138.0
+offset_bottom = -52.0
+
+[node name="CoinsCollectedText" type="Label" parent="Camera2D" groups=["monedas"]]
+offset_left = -113.0
+offset_top = -76.0
+offset_right = -97.0
+offset_bottom = -50.0
+text = "0"
+uppercase = true
+script = ExtResource("4_6xw2p")
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -120.0
+offset_top = -77.0
+offset_right = -109.0
+offset_bottom = -51.0
+text = ":"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

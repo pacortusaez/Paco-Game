@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://daqw4d7xdfbvp"]
+
+[ext_resource type="Texture2D" uid="uid://ci0ks4gkwdi4t" path="res://Recursos/TileMap/coin2.png" id="1_ng7ma"]
+[ext_resource type="Script" path="res://Juego/Escenarios/Niveles/Nivel01/Coin2D.gd" id="1_pv2tt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y704w"]
+radius = 16.0
+
+[sub_resource type="Animation" id="Animation_vweta"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jdgxa"]
+resource_name = "coin"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wm7u7"]
+_data = {
+"RESET": SubResource("Animation_vweta"),
+"coin": SubResource("Animation_jdgxa")
+}
+
+[node name="Coin" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_pv2tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y704w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_ng7ma")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+autoplay = "coin"
+method_call_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_wm7u7")
+}
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

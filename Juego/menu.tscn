@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3kk2ecjt6tk8"]
+
+[ext_resource type="Script" path="res://MENU.gd" id="1_rcugs"]
+[ext_resource type="Texture2D" uid="uid://bqj85icvml5ea" path="res://Nueva carpeta/INTRO.png" id="2_bnxku"]
+[ext_resource type="FontFile" uid="uid://bpuv8lvavm1q2" path="res://Nueva carpeta/Nightmare Codehack.otf" id="3_b71tt"]
+
+[sub_resource type="Theme" id="Theme_6k27r"]
+default_font_size = 12
+
+[node name="MENU" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rcugs")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 641.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 286)
+scale = Vector2(1.34579, 1.00351)
+texture = ExtResource("2_bnxku")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+light_mask = 0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 7.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme = SubResource("Theme_6k27r")
+theme_override_colors/background_color = Color(1, 0, 0, 0)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 0)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.745098, 0, 0, 0.909804)
+theme_override_colors/current_line_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_color = Color(0.372549, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_b71tt")
+theme_override_font_sizes/font_size = 120
+text = "                      
+          LUIGI'S ADVENTURE"
+highlight_current_line = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

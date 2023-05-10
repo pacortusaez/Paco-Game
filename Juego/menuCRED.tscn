@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7w4mj71rjrrt"]
+
+[ext_resource type="Script" path="res://CREDITOS.gd" id="1_bjtft"]
+[ext_resource type="Texture2D" uid="uid://djijv6kmnlhpd" path="res://Nueva carpeta/background-green-dark-gradient-abstract-background-texture-for-christmas-free-photo.jpg" id="2_btq5e"]
+[ext_resource type="FontFile" uid="uid://bpuv8lvavm1q2" path="res://Nueva carpeta/Nightmare Codehack.otf" id="3_foat0"]
+[ext_resource type="FontFile" uid="uid://dt5c8u6ojx32m" path="res://Nueva carpeta/KarmaFuture.ttf" id="4_lamd2"]
+[ext_resource type="Script" path="res://Button CREDIT.gd" id="5_eh8uy"]
+[ext_resource type="Script" path="res://JUGAR.gd" id="6_874ip"]
+[ext_resource type="Script" path="res://SALIR.gd" id="7_u7v6k"]
+[ext_resource type="Texture2D" uid="uid://dnnh3atrpkam5" path="res://Recursos/TileMap/Personaje1paco1.png" id="8_q8ann"]
+
+[sub_resource type="Theme" id="Theme_bfx3a"]
+
+[node name="CREDITOS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjtft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.65098)
+position = Vector2(575.25, 323.625)
+scale = Vector2(0.784694, 0.66199)
+texture = ExtResource("2_btq5e")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+light_mask = 0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 111.0
+grow_horizontal = 2
+theme = SubResource("Theme_bfx3a")
+theme_override_colors/background_color = Color(1, 0, 0, 0)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 0)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.745098, 0, 0, 0.909804)
+theme_override_colors/current_line_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_color = Color(0.372549, 0, 0, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_foat0")
+theme_override_font_sizes/font_size = 90
+text = "                    LUIGI'S ADVENTURE"
+highlight_current_line = true
+
+[node name="Button CREDIT" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 585.0
+offset_right = -580.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_lamd2")
+theme_override_font_sizes/font_size = 40
+text = "CREDITOS"
+script = ExtResource("5_eh8uy")
+
+[node name="JUGAR" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 378.0
+offset_right = -584.0
+offset_bottom = 439.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_lamd2")
+theme_override_font_sizes/font_size = 40
+text = "JUGAR"
+script = ExtResource("6_874ip")
+
+[node name="SALIR" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 440.0
+offset_right = -584.0
+offset_bottom = 502.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_lamd2")
+theme_override_font_sizes/font_size = 40
+text = "SALIR"
+script = ExtResource("7_u7v6k")
+
+[node name="CREDITOS" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 200.0
+offset_bottom = 286.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_lamd2")
+theme_override_font_sizes/font_size = 50
+text = "                               MENU PRINCIPAL"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(881, 446.031)
+scale = Vector2(7.42857, 6.67903)
+texture = ExtResource("8_q8ann")
+
+[connection signal="pressed" from="Button CREDIT" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button CREDIT" to="Button CREDIT" method="_on_pressed"]
+[connection signal="pressed" from="Button CREDIT" to="SALIR" method="_on_button_credit_pressed"]
+[connection signal="pressed" from="JUGAR" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="JUGAR" to="JUGAR" method="_on_pressed"]
+[connection signal="pressed" from="SALIR" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SALIR" to="SALIR" method="_on_pressed"]

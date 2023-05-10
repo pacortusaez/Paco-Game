@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://byb3htbkdaobk"]
+
+[ext_resource type="Texture2D" uid="uid://cjdr3hr25fki5" path="res://Nueva carpeta/fondo creditos.jpg" id="1_pau3c"]
+[ext_resource type="FontFile" uid="uid://dt5c8u6ojx32m" path="res://Nueva carpeta/KarmaFuture.ttf" id="2_bggm4"]
+[ext_resource type="FontFile" uid="uid://dy5wffk54fer4" path="res://Nueva carpeta/Anbenduktrial.otf" id="3_dnunn"]
+
+[node name="2" type="Control" groups=["nivel"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 645.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(2.21538, 1.95181)
+texture = ExtResource("1_pau3c")
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_fonts/font = ExtResource("2_bggm4")
+theme_override_font_sizes/font_size = 22
+text = "                   
+
+
+                           Este juego ha sido programado y diseñado por
+                           alumnos de IES Francisco Salzillo que son los 
+                           siguientes: Paco Ortuño y David Gil. 
+
+                          Sobre las caracteristicas del juego...
+
+                          Imagen de TileMap: Autor: arcade_platformerV2_alpha-x2
+						  Titulo: Platformer Art Complete Pack
+						  Licencia: CC0
+						  Directorio en el proyecto: /Recursos/TileMap/preview.png
+
+
+                          Ademas, hemos durado practicamente 8 horas en 
+                          realizar este juego, esperemos que os haya gustado. 
+                          ¡Es un exito lo que han conseguido en tan poco!
+
+"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 417.0
+offset_right = -387.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_dnunn")
+theme_override_font_sizes/font_size = 70
+text = "CREDITOS"

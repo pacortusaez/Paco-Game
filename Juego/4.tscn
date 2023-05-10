@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx234l4evagmj"]
+
+[ext_resource type="Texture2D" uid="uid://djijv6kmnlhpd" path="res://Nueva carpeta/background-green-dark-gradient-abstract-background-texture-for-christmas-free-photo.jpg" id="1_wh6sp"]
+[ext_resource type="FontFile" uid="uid://dt5c8u6ojx32m" path="res://Nueva carpeta/KarmaFuture.ttf" id="2_yc2s1"]
+[ext_resource type="Script" path="res://Juego/Button.gd" id="3_grjro"]
+
+[node name="4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -4.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.65098)
+position = Vector2(575.25, 323.625)
+scale = Vector2(0.784694, 0.66199)
+texture = ExtResource("1_wh6sp")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 105.0
+offset_right = 857.0
+offset_bottom = 199.0
+theme_override_colors/background_color = Color(0, 0.67451, 0.615686, 0.827451)
+theme_override_fonts/font = ExtResource("2_yc2s1")
+theme_override_font_sizes/font_size = 40
+text = "LO HICISTE, ENHOREBUENA!!!"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 298.0
+offset_right = 1011.0
+offset_bottom = 398.0
+theme_override_colors/background_color = Color(0, 0.67451, 0.615686, 0.827451)
+theme_override_fonts/font = ExtResource("2_yc2s1")
+theme_override_font_sizes/font_size = 40
+text = "Esperamos que haya disfrutado del juego"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 450.0
+offset_right = 759.0
+offset_bottom = 580.0
+text = "CREDITOS"
+script = ExtResource("3_grjro")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

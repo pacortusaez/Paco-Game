@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://b38skt4m1pem2"]
+
+[ext_resource type="Script" path="res://Juego/6.gd" id="1_ixw7t"]
+[ext_resource type="Texture2D" uid="uid://djijv6kmnlhpd" path="res://Nueva carpeta/background-green-dark-gradient-abstract-background-texture-for-christmas-free-photo.jpg" id="1_nxa16"]
+[ext_resource type="FontFile" uid="uid://dt5c8u6ojx32m" path="res://Nueva carpeta/KarmaFuture.ttf" id="2_iba20"]
+[ext_resource type="FontFile" uid="uid://dy5wffk54fer4" path="res://Nueva carpeta/Anbenduktrial.otf" id="5_s28jw"]
+
+[node name="6" type="Control" groups=["nivel"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixw7t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.65098)
+position = Vector2(575.25, 323.625)
+scale = Vector2(0.784694, 0.66199)
+texture = ExtResource("1_nxa16")
+
+[node name="Button CREDIT" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 279.0
+offset_top = 483.0
+offset_right = -302.0
+offset_bottom = 546.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_iba20")
+theme_override_font_sizes/font_size = 40
+text = "CREDITOS"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+clip_contents = true
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 170.0
+offset_top = 111.0
+offset_right = -208.0
+offset_bottom = 279.0
+grow_horizontal = 2
+theme_override_colors/background_color = Color(0.709804, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0.698039, 0, 1)
+theme_override_fonts/font = ExtResource("5_s28jw")
+theme_override_font_sizes/font_size = 133
+text = "GAME OVER"
+highlight_current_line = true
+
+[connection signal="pressed" from="Button CREDIT" to="." method="_on_button_credit_pressed"]
+[connection signal="pressed" from="Button CREDIT" to="Button CREDIT" method="_on_pressed"]
