@@ -1,7 +1,7 @@
 # Plataform
 
 
-Creditos:
+Creditos: El juego comienza en la escena Juego/3
 
 Videos referencia:
 
